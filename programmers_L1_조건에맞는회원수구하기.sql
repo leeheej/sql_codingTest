@@ -1,6 +1,0 @@
--- 코드를 입력하세요
-SELECT COUNT(*) FROM USER_INFO
-WHERE YEAR(JOINED) = 2021
-AND AGE BETWEEN 20 AND 29;
-
--- BETWEEN 연산자는 특정 범위 내의 값을 찾는 데 사용됩니다.

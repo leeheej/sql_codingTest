@@ -1,8 +1,0 @@
--- 코드를 입력하세요
-SELECT DR_NAME, DR_ID, MCDP_CD, 
-DATE_FORMAT(HIRE_YMD, "%Y-%m-%d") AS HIRE_YMD
-FROM DOCTOR
-WHERE MCDP_CD IN ('CS', 'GS')
-ORDER BY HIRE_YMD DESC, DR_NAME ASC;
-
--- DATE_FORMAT("컬럼", "%Y-%m-%d")는 날짜 형식을 "YYYY-MM-DD"로 변환합니다.
