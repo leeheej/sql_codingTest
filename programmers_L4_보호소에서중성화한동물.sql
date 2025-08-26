@@ -1,0 +1,21 @@
+-- 코드를 입력하세요
+SELECT
+    I.ANIMAL_ID,
+    I.ANIMAL_TYPE,
+    I.NAME
+FROM
+    (SELECT
+        ANIMAL_ID, ANIMAL_TYPE, NAME, SEX_UPON_INTAKE
+    FROM ANIMAL_INS
+    WHERE 
+        SEX_UPON_INTAKE REGEXP ('^(Intact)')
+    ) AS I
+    INNER JOIN
+    (SELECT
+        ANIMAL_ID, ANIMAL_TYPE, NAME, SEX_UPON_OUTCOME
+    FROM ANIMAL_OUTS
+    WHERE 
+        SEX_UPON_OUTCOME REGEXP ('^(Spayed|Neutered)')
+    ) AS O
+    USING (ANIMAL_ID)
+    ;
